@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Minds | Estratégia para Meta ADS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cm-blue: #020242;
+            --cm-orange: #FFA500;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; color: #020242; }
+        h1, h2, h3, .brand-font { font-family: 'Montserrat', sans-serif; }
+        
+        .bg-brand-blue { background-color: var(--cm-blue); }
+        .text-brand-blue { color: var(--cm-blue); }
+        .bg-brand-orange { background-color: var(--cm-orange); }
+        .text-brand-orange { color: var(--cm-orange); }
+        .border-brand-orange { border-color: var(--cm-orange); }
+
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(2, 2, 66, 0.08); transition: all 0.3s ease; }
+        .card-shadow:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(2, 2, 66, 0.12); }
+        
+        .tab-active { border-bottom: 3px solid var(--cm-orange); color: var(--cm-orange); background-color: rgba(255, 165, 0, 0.05); }
+        
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 300px; }
+        
+        .script-scroll::-webkit-scrollbar { width: 6px; }
+        .script-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .script-scroll::-webkit-scrollbar-thumb { background: #020242; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Navigation / Header -->
+    <header class="bg-white border-b border-stone-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-4">
+                    <!-- Logomarca em texto estilizado -->
+                    <div class="flex items-center gap-2">
+                        <span class="brand-font font-black text-2xl tracking-tighter text-brand-blue">CONNECT</span>
+                        <span class="brand-font font-black text-2xl tracking-tighter text-brand-orange">MINDS</span>
+                    </div>
+                    <div class="hidden sm:block w-px h-8 bg-stone-200"></div>
+                    <span class="hidden sm:block font-bold text-sm tracking-widest uppercase text-brand-blue opacity-60">Marketing Digital</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('persona')" class="text-stone-500 hover:text-brand-orange font-bold text-xs uppercase tracking-widest transition-colors">Persona</button>
+                    <button onclick="scrollToSection('strategy')" class="text-stone-500 hover:text-brand-orange font-bold text-xs uppercase tracking-widest transition-colors">Estratégia</button>
+                    <button onclick="scrollToSection('creative')" class="text-stone-500 hover:text-brand-orange font-bold text-xs uppercase tracking-widest transition-colors">Criativos</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow p-4 md:p-8 space-y-12 max-w-7xl mx-auto w-full">
+
+        <!-- Intro Section: Título Atualizado em Duas Linhas -->
+        <section class="text-center py-8 space-y-2">
+            <div class="inline-block px-4 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-black uppercase tracking-widest mb-4">Lançamento 2026</div>
+            <h1 class="flex flex-col gap-2">
+                <span class="text-2xl md:text-3xl font-bold text-brand-blue tracking-tight uppercase opacity-80">Estratégia para Meta ADS</span>
+                <span class="text-5xl md:text-6xl font-black text-brand-orange tracking-tighter uppercase">Consumidor Influente</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-stone-600 font-medium pt-4">
+                Transformando clientes reais em máquinas de indicação e venda através de tráfego pago estratégico.
+            </p>
+        </section>
+
+        <!-- SECTION 1: PERSONA INTELLIGENCE -->
+        <section id="persona" class="bg-white rounded-[2rem] p-6 md:p-10 card-shadow border border-stone-50">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="bg-brand-blue p-3 rounded-2xl text-white shadow-lg shadow-brand-blue/20">
+                    <i class="ph-bold ph-user-focus text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-brand-blue uppercase tracking-tight">Inteligência da Persona</h2>
+                    <p class="text-sm text-stone-500 font-medium italic">O Dono de Negócio Local (B2B)</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Profile Card -->
+                <div class="lg:col-span-4 bg-slate-50 rounded-3xl p-8 border border-slate-100 flex flex-col items-center">
+                    <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center mb-6 text-5xl shadow-xl border-4 border-brand-orange/20">👨‍💼</div>
+                    <h3 class="text-2xl font-black text-brand-blue mb-2">O "Empresário Herói"</h3>
+                    <p class="text-brand-orange font-bold text-xs uppercase tracking-widest mb-6 text-center">32-45 anos • Serviços & Varejo</p>
+                    
+                    <div class="space-y-4 w-full text-sm">
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+                            <i class="ph-fill ph-check-circle text-emerald-500 text-lg"></i>
+                            <span class="font-medium">Busca eficiência e "casa cheia"</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+                            <i class="ph-fill ph-x-circle text-rose-500 text-lg"></i>
+                            <span class="font-medium">Odeia promessas e complexidade</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm">
+                            <i class="ph-fill ph-lightbulb text-brand-orange text-lg"></i>
+                            <span class="font-medium">Foca em retenção sem altos investimentos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Mind Map -->
+                <div class="lg:col-span-8 space-y-8">
+                    <p class="text-brand-blue text-xl font-semibold leading-relaxed border-l-8 border-brand-orange pl-6 py-2">
+                        "O marketing tradicional falhou com você porque ignora o ativo mais valioso: quem já está na sua loja."
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button onclick="updatePersonaDetails('medos')" id="btn-medos" class="p-5 rounded-2xl border-2 border-transparent bg-slate-100 hover:bg-slate-200 text-brand-blue font-bold text-left transition-all">
+                            <i class="ph-bold ph-warning-circle text-brand-orange mb-2 text-xl"></i>
+                            <div class="text-sm uppercase tracking-tight">Medos & Bloqueios</div>
+                        </button>
+                        <button onclick="updatePersonaDetails('ganchos')" id="btn-ganchos" class="p-5 rounded-2xl border-2 border-brand-orange bg-brand-orange/5 text-brand-blue font-bold text-left transition-all shadow-lg">
+                            <i class="ph-bold ph-magnet-straight text-brand-orange mb-2 text-xl"></i>
+                            <div class="text-sm uppercase tracking-tight">Ganchos Emocionais</div>
+                        </button>
+                        <button onclick="updatePersonaDetails('suspeita')" id="btn-suspeita" class="p-5 rounded-2xl border-2 border-transparent bg-slate-100 hover:bg-slate-200 text-brand-blue font-bold text-left transition-all">
+                            <i class="ph-bold ph-magnifying-glass text-brand-orange mb-2 text-xl"></i>
+                            <div class="text-sm uppercase tracking-tight">A Grande Suspeita</div>
+                        </button>
+                    </div>
+
+                    <div id="persona-content" class="bg-white border-2 border-slate-100 rounded-3xl p-8 min-h-[220px] script-scroll">
+                        <!-- Default: Ganchos -->
+                        <h4 class="text-xl font-black text-brand-blue mb-4 flex items-center gap-2">
+                            <i class="ph-fill ph-magnet-straight text-brand-orange"></i> Ganchos Emocionais
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4 items-start">
+                                <span class="bg-brand-blue text-white w-6 h-6 flex items-center justify-center rounded-lg text-xs font-black shrink-0">1</span>
+                                <p class="text-stone-700"><strong>Justificativa do Erro:</strong> O marketing antigo falhou porque ignora quem já está na loja.</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="bg-brand-blue text-white w-6 h-6 flex items-center justify-center rounded-lg text-xs font-black shrink-0">2</span>
+                                <p class="text-stone-700"><strong>Confirmação de Suspeita:</strong> O boca a boca é o que vende. Nós automatizamos isso em escala.</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="bg-brand-blue text-white w-6 h-6 flex items-center justify-center rounded-lg text-xs font-black shrink-0">3</span>
+                                <p class="text-stone-700"><strong>Alívio Imediato:</strong> Sem dancinhas, sem agências caras. O cliente trabalha por você.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: STRATEGY STRUCTURE -->
+        <section id="strategy" class="bg-white rounded-[2rem] p-6 md:p-10 card-shadow border border-stone-50">
+             <div class="flex items-center gap-4 mb-10">
+                <div class="bg-brand-orange p-3 rounded-2xl text-brand-blue shadow-lg shadow-brand-orange/20">
+                    <i class="ph-bold ph-strategy text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-brand-blue uppercase tracking-tight">Arquitetura Connect Minds</h2>
+                    <p class="text-sm text-stone-500 font-medium">Fluxo de Performance 2026</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100">
+                    <h3 class="text-center font-black text-brand-blue mb-6 text-xs uppercase tracking-[0.2em]">Funil de Intenção</h3>
+                    <div class="chart-container">
+                        <canvas id="campaignChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Campaign 1 -->
+                    <div class="relative bg-white border-l-8 border-brand-blue rounded-r-3xl p-6 shadow-sm">
+                        <div class="absolute -left-5 top-1/2 -translate-y-1/2 bg-brand-blue text-white w-10 h-10 rounded-2xl flex items-center justify-center font-black shadow-lg">1</div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-black text-xl text-brand-blue">DESCOBERTA</h3>
+                            <span class="bg-brand-blue/10 text-brand-blue text-[10px] px-3 py-1 rounded-full font-black uppercase">Topo</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-sm mb-4">
+                            <div>
+                                <p class="text-stone-400 font-bold text-[10px] uppercase mb-1">Público</p>
+                                <p class="font-bold text-brand-blue">Advantage+ IA</p>
+                            </div>
+                            <div>
+                                <p class="text-stone-400 font-bold text-[10px] uppercase mb-1">Métrica Chave</p>
+                                <p class="font-bold text-brand-blue">ThruPlay (15s)</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100">
+                            <p class="text-brand-orange font-black text-lg">Chamada: "Saiba Mais"</p>
+                        </div>
+                    </div>
+
+                    <!-- Campaign 2 -->
+                    <div class="relative bg-white border-l-8 border-brand-orange rounded-r-3xl p-6 shadow-sm">
+                        <div class="absolute -left-5 top-1/2 -translate-y-1/2 bg-brand-orange text-brand-blue w-10 h-10 rounded-2xl flex items-center justify-center font-black shadow-lg">2</div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-black text-xl text-brand-blue">CONVERSÃO</h3>
+                            <span class="bg-brand-orange/20 text-brand-orange text-[10px] px-3 py-1 rounded-full font-black uppercase">Fundo</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-sm mb-4">
+                            <div>
+                                <p class="text-stone-400 font-bold text-[10px] uppercase mb-1">Público</p>
+                                <p class="font-bold text-brand-blue">Retargeting Vídeo</p>
+                            </div>
+                            <div>
+                                <p class="text-stone-400 font-bold text-[10px] uppercase mb-1">Métrica Chave</p>
+                                <p class="font-bold text-brand-blue">Leads Qualificados</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100">
+                            <p class="text-brand-orange font-black text-lg">Chamada: "Quero Testar"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CREATIVE STUDIO -->
+        <section id="creative" class="bg-white rounded-[2rem] p-6 md:p-10 card-shadow border border-stone-50">
+             <div class="flex items-center gap-4 mb-8">
+                <div class="bg-brand-blue p-3 rounded-2xl text-white">
+                    <i class="ph-bold ph-film-strip text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black text-brand-blue uppercase tracking-tight">Estúdio de Criativos</h2>
+                    <p class="text-sm text-stone-500 font-medium italic">Roteiros Estratégicos Connect Minds</p>
+                </div>
+            </div>
+
+            <!-- Campaign Selector Tabs -->
+            <div class="flex space-x-2 mb-8 bg-slate-50 p-1.5 rounded-2xl">
+                <button onclick="switchCreativeTab('camp1')" id="tab-camp1" class="tab-active flex-1 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all">
+                    1. Descoberta
+                </button>
+                <button onclick="switchCreativeTab('camp2')" id="tab-camp2" class="flex-1 px-6 py-3 rounded-xl text-stone-400 hover:text-brand-blue font-black text-xs uppercase tracking-widest transition-all">
+                    2. Conversão
+                </button>
+            </div>
+
+            <!-- Content Area: Campaign 1 -->
+            <div id="content-camp1" class="creative-content grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- REELS -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-orange">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-video text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">9:16</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Reels (15-30s)</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow script-scroll overflow-y-auto max-h-72 pr-2">
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Cena</p>
+                        <p class="bg-white p-3 rounded-xl text-xs italic border border-slate-100">Empresário (ou ator) atrás do balcão, pensativo/frustrado.</p>
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Roteiro</p>
+                        <p class="bg-white p-4 rounded-xl text-xs leading-relaxed border border-slate-100 font-medium">
+                            "Sente que o marketing digital virou um jogo onde você investe e só as plataformas ganham? <br><br>
+                            Enquanto você busca clientes novos na internet, os seus clientes atuais estão aí na sua frente. Por que não transformá-los nos seus melhores vendedores? <br><br>
+                            Conheça o Consumidor Influente: a tecnologia que transforma consumo real em mídia e vendas recorrentes. Toque em saiba mais."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARROSSEL -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-blue">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-cards text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">4:5</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Carrossel Estratégico</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow script-scroll overflow-y-auto max-h-72 pr-2">
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">01.</span>
+                            <p class="text-xs">"O seu melhor marketing já está dentro da sua loja." (Foto: cliente feliz).</p>
+                        </div>
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">02.</span>
+                            <p class="text-xs">"Influenciadores tradicionais são caros e distantes. Seus clientes são reais e locais."</p>
+                        </div>
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">03.</span>
+                            <p class="text-xs">"Transforme consumo em recorrência. Cada venda vira uma vitrine."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESTÁTICO -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-orange">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-image text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">1:1 & 9:16</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Post Estático</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow">
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Visual</p>
+                        <p class="bg-white p-3 rounded-xl text-xs border border-slate-100">Foto de alta qualidade de um QR Code elegante sobre mesa/balcão.</p>
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Headline</p>
+                        <p class="font-black text-brand-blue text-lg leading-tight uppercase">"Sua máquina de vendas está em cima da mesa."</p>
+                        <p class="italic text-xs bg-white p-3 rounded-xl border border-slate-100">Legenda: Chega de anúncios complicados. Use o poder de quem já ama sua marca.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area: Campaign 2 -->
+            <div id="content-camp2" class="creative-content grid grid-cols-1 md:grid-cols-3 gap-8 hidden">
+                <!-- REELS (DEMO) -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-orange">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-video-camera text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">9:16</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Reels (Demo/Prova)</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow script-scroll overflow-y-auto max-h-72 pr-2">
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Roteiro</p>
+                        <p class="bg-white p-4 rounded-xl text-xs leading-relaxed border border-slate-100 font-medium">
+                            "Funciona assim: o cliente escaneia o QR Code, envia uma foto do produto que ele consumiu e, após aprovarmos, ele ganha um brinde exclusivo para a próxima visita. <br><br>
+                            Você ganha conteúdo real de quem usa seu serviço e garante que ele volte. Toque e veja como implementar hoje no seu negócio."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARROSSEL (CONVERSÃO) -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-blue">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-cards text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">4:5</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Carrossel: Ciclo de Foto-Venda</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow script-scroll overflow-y-auto max-h-72 pr-2">
+                        <!-- CAPA CHAMATIVA -->
+                        <div class="flex gap-3 bg-brand-orange/20 p-4 rounded-xl border border-brand-orange font-black text-brand-blue italic">
+                            <span>CAPA:</span>
+                            <p class="text-xs uppercase">"O FLUXO QUE TRANSFORMA UMA FOTO EM LUCRO RECORRENTE (EM 3 PASSOS)."</p>
+                        </div>
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">01.</span>
+                            <p class="text-xs"><strong>A EXPERIÊNCIA:</strong> O cliente consome o produto/serviço e escaneia o QR Code exclusivo.</p>
+                        </div>
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">02.</span>
+                            <p class="text-xs"><strong>O REGISTRO:</strong> Ele envia uma foto do que consumiu. Nossa plataforma organiza tudo para você.</p>
+                        </div>
+                        <div class="flex gap-3 bg-white p-3 rounded-xl border border-slate-100">
+                            <span class="font-black text-brand-orange">03.</span>
+                            <p class="text-xs"><strong>A RECOMPENSA:</strong> Foto aprovada? Ele recebe automaticamente um brinde/voucher para a próxima compra.</p>
+                        </div>
+                        <div class="flex gap-3 bg-brand-blue text-white p-3 rounded-xl">
+                            <span class="font-black text-brand-orange">CTA.</span>
+                            <p class="text-xs">"Clique para testar o MVP e automatizar suas vendas hoje."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESTÁTICO (CHAMADA) -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-200 flex flex-col h-full border-b-8 border-b-brand-orange">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="ph-fill ph-image text-brand-blue text-3xl"></i>
+                        <span class="text-[10px] bg-brand-blue text-white px-3 py-1 rounded-full font-black uppercase">1:1 & 9:16</span>
+                    </div>
+                    <h4 class="font-black text-brand-blue mb-4 uppercase text-sm tracking-tight">Post de Oferta</h4>
+                    <div class="text-sm text-stone-600 space-y-4 flex-grow">
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Visual</p>
+                        <p class="bg-white p-3 rounded-xl text-xs border border-slate-100">Empresário sorrindo segurando um smartphone com gráfico de crescimento.</p>
+                        <p class="text-[10px] font-black text-brand-orange uppercase">Headline</p>
+                        <p class="font-black text-brand-blue text-lg leading-tight uppercase">"Pare de comprar tráfego. Comece a comprar vendas."</p>
+                        <div class="bg-brand-orange/10 p-4 rounded-xl border border-brand-orange/30">
+                            <p class="text-[10px] font-black text-brand-blue uppercase">Chamada de Ação</p>
+                            <p class="text-xs font-bold text-brand-blue">Agende sua consultoria para o MVP Consumidor Influente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER TECH CHECKLIST -->
+        <section class="bg-brand-blue rounded-[2.5rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-64 h-64 bg-brand-orange opacity-10 rounded-full blur-[100px]"></div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+                <div>
+                    <h2 class="text-2xl font-black flex items-center gap-3 uppercase tracking-tight">
+                        <i class="ph-fill ph-shield-check text-brand-orange"></i> Checklist Connect Minds
+                    </h2>
+                    <p class="text-slate-400 font-medium">Padrão de Qualidade Obrigatório</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md px-6 py-2 rounded-2xl text-[10px] font-black text-brand-orange border border-white/10 tracking-[0.2em]">
+                    SISTEMA OPERACIONAL ATIVO
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-[10px] font-black text-brand-orange uppercase mb-2">Reels</p>
+                    <p class="text-sm font-bold">1080x1920 (9:16)</p>
+                    <p class="text-[10px] text-slate-400 mt-2 italic">Margens de segurança UI</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-[10px] font-black text-brand-orange uppercase mb-2">Feed</p>
+                    <p class="text-sm font-bold">1080x1350 (4:5)</p>
+                    <p class="text-[10px] text-slate-400 mt-2 italic">Priorizar legibilidade</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-[10px] font-black text-brand-orange uppercase mb-2">Estáticos/Stories</p>
+                    <p class="text-sm font-bold">1:1 e 9:16 Obrigatórios</p>
+                    <p class="text-[10px] text-slate-400 mt-2 italic">Adaptabilidade total</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-[10px] font-black text-brand-orange uppercase mb-2">Identidade</p>
+                    <p class="text-sm font-bold">Fotos Reais CM</p>
+                    <p class="text-[10px] text-slate-400 mt-2 italic">Humanizar sempre</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-stone-100 py-10">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-1 opacity-50 hover:opacity-100 transition-opacity">
+                <span class="brand-font font-black text-lg tracking-tighter text-brand-blue">CONNECT</span>
+                <span class="brand-font font-black text-lg tracking-tighter text-brand-orange">MINDS</span>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-[10px] font-black text-brand-blue uppercase tracking-widest">&copy; 2026 Connect Minds Marketing Digital</p>
+                <p class="text-[10px] text-stone-400 mt-1 uppercase">Documento Estratégico de Uso Interno</p>
+                <p class="text-[11px] font-bold text-brand-orange mt-2">connectmindsmarketing@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const personaData = {
+            medos: {
+                title: 'Medos & Bloqueios',
+                icon: 'ph-warning-circle',
+                items: [
+                    { id: 1, title: 'Dinheiro no Ralo', text: 'Medo de investir em tráfego e não ter rastro do retorno (ROI).' },
+                    { id: 2, title: 'Complexidade', text: 'Pavor de ferramentas que exigem horas de configuração. Quer simplicidade.' },
+                    { id: 3, title: 'Prova Social', text: 'Suspeita que o digital só funciona para grandes marcas, não para o bairro.' }
+                ],
+                colorClass: 'text-brand-blue'
+            },
+            ganchos: {
+                title: 'Ganchos Emocionais',
+                icon: 'ph-magnet-straight',
+                items: [
+                    { id: 1, title: 'Justificativa do Erro', text: 'O marketing antigo falhou porque ignora o ativo mais valioso: quem já está na loja.' },
+                    { id: 2, title: 'Confirmação de Suspeita', text: 'O boca a boca é o que vende. Nós apenas automatizamos isso em escala.' },
+                    { id: 3, title: 'Alívio Imediato', text: 'Sem dancinhas, sem agências caras. O cliente trabalha por você.' }
+                ],
+                colorClass: 'text-brand-blue'
+            },
+            suspeita: {
+                title: 'A Grande Suspeita',
+                icon: 'ph-magnifying-glass',
+                items: [
+                    { id: 1, title: 'Influencers vs Realidade', text: 'Acredita que influencers grandes não convertem para o negócio local dele.' },
+                    { id: 2, title: 'Falta de Controle', text: 'Medo de que o conteúdo postado seja ruim ou prejudique a marca.' },
+                    { id: 3, title: 'Custo de Agência', text: 'Sente que paga mensalidade apenas por "posts de datas comemorativas".' }
+                ],
+                colorClass: 'text-brand-blue'
+            }
+        };
+
+        function updatePersonaDetails(key) {
+            const data = personaData[key];
+            const container = document.getElementById('persona-content');
+            
+            document.querySelectorAll('.interactive-node, button[id^="btn-"]').forEach(btn => {
+                btn.classList.remove('border-brand-orange', 'bg-brand-orange/5', 'shadow-lg');
+                btn.classList.add('border-transparent', 'bg-slate-100');
+            });
+            
+            const activeBtn = document.getElementById(`btn-${key}`);
+            activeBtn.classList.remove('border-transparent', 'bg-slate-100');
+            activeBtn.classList.add('border-brand-orange', 'bg-brand-orange/5', 'shadow-lg');
+
+            let html = `
+                <h4 class="text-xl font-black ${data.colorClass} mb-4 flex items-center gap-2">
+                    <i class="ph-fill ${data.icon} text-brand-orange"></i> ${data.title}
+                </h4>
+                <ul class="space-y-4 opacity-0 transition-opacity duration-300" id="anim-list">
+            `;
+            
+            data.items.forEach(item => {
+                html += `
+                    <li class="flex gap-4 items-start">
+                        <span class="bg-brand-blue text-white w-6 h-6 flex items-center justify-center rounded-lg text-xs font-black shrink-0">${item.id}</span>
+                        <p class="text-stone-700 text-sm"><strong>${item.title}:</strong> ${item.text}</p>
+                    </li>
+                `;
+            });
+            html += `</ul>`;
+            container.innerHTML = html;
+            setTimeout(() => document.getElementById('anim-list').classList.remove('opacity-0'), 50);
+        }
+
+        function switchCreativeTab(campaignId) {
+            document.querySelectorAll('.creative-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`content-${campaignId}`).classList.remove('hidden');
+
+            const btn1 = document.getElementById('tab-camp1');
+            const btn2 = document.getElementById('tab-camp2');
+
+            if (campaignId === 'camp1') {
+                btn1.className = 'tab-active flex-1 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all';
+                btn2.className = 'flex-1 px-6 py-3 rounded-xl text-stone-400 hover:text-brand-blue font-black text-xs uppercase tracking-widest transition-all';
+            } else {
+                btn2.className = 'tab-active flex-1 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all';
+                btn1.className = 'flex-1 px-6 py-3 rounded-xl text-stone-400 hover:text-brand-blue font-black text-xs uppercase tracking-widest transition-all';
+            }
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('campaignChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Alcance', 'Engajamento', 'Consideração', 'Venda'],
+                    datasets: [{
+                        data: [100, 65, 30, 8],
+                        backgroundColor: ['#020242', '#1a1a5c', '#FFA500', '#cc8400'],
+                        borderRadius: 12
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { display: false },
+                        x: { grid: { display: false }, ticks: { font: { weight: 'bold', size: 10 } } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
